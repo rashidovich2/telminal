@@ -243,9 +243,7 @@ class Telminal:
         import sys
 
         self._authentication_token = uuid.uuid4().hex[:7]
-        sys.stdout.write(
-            "New token generated...: {}\n\n".format(self._authentication_token)
-        )
+        sys.stdout.write(f"New token generated...: {self._authentication_token}\n\n")
         signal.signal(signal.SIGALRM, self._token_timeout)
         signal.alarm(Telminal.AUTH_TOKEN_EXPIRE_TIME)
 
